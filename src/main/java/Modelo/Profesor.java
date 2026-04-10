@@ -42,6 +42,10 @@ public class Profesor extends Persona {
         double base = salarioPorHora * horasMes;
         return base * 1.30;
     }
+    
+    public double getPagoTotal() {
+    return calcularPago();  // Llama al método sin parámetros
+}
 
     /** SOBRECARGA 2 — pago con horas extra adicionales */
     public double calcularPago(int horasExtra) {
