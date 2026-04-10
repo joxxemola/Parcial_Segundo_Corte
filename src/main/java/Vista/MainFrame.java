@@ -22,7 +22,7 @@ import java.awt.event.*;
 public class MainFrame extends JFrame {
 
     // ── Modelo de datos ───────────────────────────────────────────────────
-    private final Colegio colegio = new Colegio("Colegio San José");
+    private final Colegio colegio = new Colegio("Colegio UAO");
 
     // ── Componentes comunes ───────────────────────────────────────────────
     private JTabbedPane tabbedPane;
@@ -86,7 +86,7 @@ public class MainFrame extends JFrame {
         addField(form, "Cédula:",        txtCedula);
         addField(form, "Área:",          txtArea);
         addField(form, "Desc. Área:",    txtDescArea);
-        addField(form, "Sal/Hora ($):",  txtSalHora);
+        addField(form, "Salario/Hora ($):",  txtSalHora);
         addField(form, "Horas/Mes:",     txtHoras);
 
         JButton btnAgregar  = new JButton("➕ Agregar");
