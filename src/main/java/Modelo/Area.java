@@ -1,25 +1,5 @@
 package modelo;
 
-/**
- * Clase Area — representa un área académica dentro del sistema.
- *
- * <p>Un área académica define la especialidad o campo de enseñanza
- * de un profesor, como por ejemplo: Matemáticas, Ciencias, Lenguaje, etc.</p>
- *
- * <p><b>Relación:</b>
- * Existe una relación de asociación (o composición) donde
- * un Profesor tiene un objeto de tipo Area.</p>
- *
- * <p><b>Responsabilidades:</b>
- * <ul>
- *   <li>Almacenar el nombre del área.</li>
- *   <li>Describir el área académica.</li>
- * </ul>
- * </p>
- *
- * @author
- * @version 1.0
- */
 public class Area {
 
     /** Nombre del área académica */

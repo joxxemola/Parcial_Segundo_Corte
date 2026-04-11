@@ -7,30 +7,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Clase Colegio — lógica principal del sistema.
- *
- * <p>Esta clase representa un colegio y se encarga de gestionar
- * la información de los profesores y estudiantes registrados.</p>
- *
- * <p>Permite:
- * <ul>
- *   <li>Agregar y eliminar profesores.</li>
- *   <li>Agregar y eliminar estudiantes.</li>
- *   <li>Generar reportes organizados en formato texto.</li>
- * </ul>
- * </p>
- *
- * <p><b>Relaciones:</b>
- * <ul>
- *   <li>Dependencia con {@link Profesor}</li>
- *   <li>Dependencia con {@link Estudiante}</li>
- * </ul>
- * </p>
- *
- * @author
- * @version 1.0
- */
 public class Colegio {
 
     /** Nombre del colegio */
