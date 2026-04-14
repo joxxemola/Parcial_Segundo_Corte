@@ -117,6 +117,12 @@ public class MainFrame extends JFrame {
         JButton btnAgregar = new JButton("Agregar Profesor");
         JButton btnEliminar = new JButton("Eliminar Profesor");
         
+        btnAgregar.setBackground(Color.GREEN);  // Verde
+        btnAgregar.setFont(new Font("Arial", Font.BOLD, 12));
+        btnAgregar.setFocusPainted(false);
+        
+        btnEliminar.setBackground(Color.RED);
+        
         btnAgregar.addActionListener(e -> agregarProfesor());
         btnEliminar.addActionListener(e -> eliminarProfesor());
         
