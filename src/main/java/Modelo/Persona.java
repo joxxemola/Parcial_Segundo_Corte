@@ -53,14 +53,6 @@ public abstract class Persona {
     // MÉTODOS ABSTRACTOS
     // ─────────────────────────────────────────────────────────────
 
-    /**
-     * Método abstracto que debe ser implementado por las subclases.
-     *
-     * <p>Cada tipo de persona (Profesor o Estudiante) define
-     * su propia forma de mostrar la información.</p>
-     *
-     * @return cadena con la información formateada
-     */
     public abstract String mostrarInfo();
 
     // ─────────────────────────────────────────────────────────────

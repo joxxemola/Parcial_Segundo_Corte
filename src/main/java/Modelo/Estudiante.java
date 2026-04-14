@@ -14,30 +14,13 @@ public class Estudiante extends Persona {
 
     /** Nombre del acudiente o responsable */
     private String acudiente;
-
-    // ─────────────────────────────────────────────────────────────
-    // CONSTRUCTOR
-    // ─────────────────────────────────────────────────────────────
-
-    /**
-     * No se define constructor explícito.
-     *
-     * <p>Se utiliza el constructor vacío heredado de {@link Persona}.
-     * Los atributos deben ser inicializados mediante setters.</p>
-     */
+ 
 
     // ─────────────────────────────────────────────────────────────
     // MÉTODOS
     // ─────────────────────────────────────────────────────────────
 
-    /**
-     * Muestra la información del estudiante en formato personalizado.
-     *
-     * <p>Este método sobrescribe el comportamiento definido en la clase
-     * {@link Persona}, aplicando polimorfismo.</p>
-     *
-     * @return cadena con la información del estudiante
-     */
+
     @Override
     public String mostrarInfo() {
         return String.format(

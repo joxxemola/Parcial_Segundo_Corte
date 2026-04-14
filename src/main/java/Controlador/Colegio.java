@@ -73,20 +73,7 @@ public class Colegio {
     // REPORTES
     // ─────────────────────────────────────────────────────────────
 
-    /**
-     * Genera un reporte en formato tabla con la lista de estudiantes.
-     *
-     * <p>Incluye:
-     * <ul>
-     *   <li>Nombre</li>
-     *   <li>Código</li>
-     *   <li>Grado</li>
-     *   <li>Acudiente</li>
-     * </ul>
-     * </p>
-     *
-     * @return Cadena de texto con el reporte formateado
-     */
+
     public String reporteEstudiantes() {
         StringBuilder sb = new StringBuilder();
 
@@ -111,22 +98,7 @@ public class Colegio {
         return sb.toString();
     }
 
-    /**
-     * Genera un reporte de profesores ordenados por salario total (de mayor a menor).
-     *
-     * <p>Incluye:
-     * <ul>
-     *   <li>Nombre</li>
-     *   <li>Área</li>
-     *   <li>Pago total</li>
-     *   <li>Prestaciones sociales</li>
-     * </ul>
-     * </p>
-     *
-     * <p>También calcula el total acumulado de prestaciones sociales.</p>
-     *
-     * @return Cadena de texto con el reporte formateado
-     */
+
     public String reporteProfesores() {
 
         // Copia para no modificar la lista original
