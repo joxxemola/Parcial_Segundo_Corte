@@ -83,7 +83,7 @@ public class MainFrame extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Panel de formulario
+        // Panel de formulario con GridLayout (filas x columnas)
         JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
@@ -100,38 +100,104 @@ public class MainFrame extends JFrame {
         txtSalHora = new JTextField(15);
         txtHoras = new JTextField(15);
 
-        // Agregar componentes al formulario
-        int row = 0;
-        addFormField(formPanel, gbc, "Nombre:", txtNombreP, row++);
-        addFormField(formPanel, gbc, "Dirección:", txtDirP, row++);
-        addFormField(formPanel, gbc, "Teléfono:", txtTelP, row++);
-        addFormField(formPanel, gbc, "Fecha Nacimiento:", txtNacP, row++);
-        addFormField(formPanel, gbc, "Cédula:", txtCedula, row++);
-        addFormField(formPanel, gbc, "Área:", txtArea, row++);
-        addFormField(formPanel, gbc, "Descripción Área:", txtDescArea, row++);
-        addFormField(formPanel, gbc, "Salario por Hora:", txtSalHora, row++);
-        addFormField(formPanel, gbc, "Horas por Mes:", txtHoras, row++);
+        // ========== FILA 1 ==========
+        // Columna 1: Nombre
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        formPanel.add(new JLabel("Nombre:"), gbc);
 
-        // Botones
-        JPanel buttonPanel = new JPanel(new FlowLayout());
+        gbc.gridx = 1;
+        formPanel.add(txtNombreP, gbc);
+
+        // Columna 2: Dirección
+        gbc.gridx = 2;
+        formPanel.add(new JLabel("Dirección:"), gbc);
+
+        gbc.gridx = 3;
+        formPanel.add(txtDirP, gbc);
+
+        // Columna 3: Teléfono
+        gbc.gridx = 4;
+        formPanel.add(new JLabel("Teléfono:"), gbc);
+
+        gbc.gridx = 5;
+        formPanel.add(txtTelP, gbc);
+
+        // ========== FILA 2 ==========
+        // Columna 1: Fecha Nacimiento
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        formPanel.add(new JLabel("Fecha Nac.:"), gbc);
+
+        gbc.gridx = 1;
+        formPanel.add(txtNacP, gbc);
+
+        // Columna 2: Cédula
+        gbc.gridx = 2;
+        formPanel.add(new JLabel("Cédula:"), gbc);
+
+        gbc.gridx = 3;
+        formPanel.add(txtCedula, gbc);
+
+        // Columna 3: Área
+        gbc.gridx = 4;
+        formPanel.add(new JLabel("Área:"), gbc);
+
+        gbc.gridx = 5;
+        formPanel.add(txtArea, gbc);
+
+        // ========== FILA 3 ==========
+        // Columna 1: Descripción Área
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        formPanel.add(new JLabel("Descripción:"), gbc);
+
+        gbc.gridx = 1;
+        formPanel.add(txtDescArea, gbc);
+
+        // Columna 2: Salario por Hora
+        gbc.gridx = 2;
+        formPanel.add(new JLabel("Salario/Hora:"), gbc);
+
+        gbc.gridx = 3;
+        formPanel.add(txtSalHora, gbc);
+
+        // Columna 3: Horas por Mes
+        gbc.gridx = 4;
+        formPanel.add(new JLabel("Horas/Mes:"), gbc);
+
+        gbc.gridx = 5;
+        formPanel.add(txtHoras, gbc);
+
+        // ========== FILA 4: Botones ==========
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+
         JButton btnAgregar = new JButton("Agregar Profesor");
         JButton btnEliminar = new JButton("Eliminar Profesor");
-        
-        btnAgregar.setBackground(Color.GREEN);  // Verde
-        btnAgregar.setFont(new Font("Arial", Font.BOLD, 12));
+
+        // Estilos para botones
+        btnAgregar.setBackground(new Color(46, 204, 113));
+        btnAgregar.setForeground(Color.BLACK);
+        btnAgregar.setFont(new Font("Segoe UI", Font.BOLD, 12));
         btnAgregar.setFocusPainted(false);
-        
-        btnEliminar.setBackground(Color.RED);
-        
+        btnAgregar.setPreferredSize(new Dimension(180, 35));
+
+        btnEliminar.setBackground(new Color(231, 76, 60));
+        btnEliminar.setForeground(Color.BLACK);
+        btnEliminar.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        btnEliminar.setFocusPainted(false);
+        btnEliminar.setPreferredSize(new Dimension(180, 35));
+
         btnAgregar.addActionListener(e -> agregarProfesor());
         btnEliminar.addActionListener(e -> eliminarProfesor());
-        
+
         buttonPanel.add(btnAgregar);
         buttonPanel.add(btnEliminar);
 
         gbc.gridx = 0;
-        gbc.gridy = row;
-        gbc.gridwidth = 2;
+        gbc.gridy = 3;
+        gbc.gridwidth = 6;  // Ocupa todas las columnas
         formPanel.add(buttonPanel, gbc);
 
         // Tabla de profesores
@@ -151,13 +217,12 @@ public class MainFrame extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Panel de formulario
         JPanel formPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Crear campos de texto
+        // Crear campos
         txtNombreE = new JTextField(15);
         txtDirE = new JTextField(15);
         txtTelE = new JTextField(15);
@@ -166,30 +231,78 @@ public class MainFrame extends JFrame {
         txtGrado = new JTextField(15);
         txtAcudiente = new JTextField(15);
 
-        // Agregar componentes al formulario
-        int row = 0;
-        addFormField(formPanel, gbc, "Nombre:", txtNombreE, row++);
-        addFormField(formPanel, gbc, "Dirección:", txtDirE, row++);
-        addFormField(formPanel, gbc, "Teléfono:", txtTelE, row++);
-        addFormField(formPanel, gbc, "Fecha Nacimiento:", txtNacE, row++);
-        addFormField(formPanel, gbc, "Código:", txtCodigo, row++);
-        addFormField(formPanel, gbc, "Grado:", txtGrado, row++);
-        addFormField(formPanel, gbc, "Acudiente:", txtAcudiente, row++);
+        // ========== FILA 1 ==========
+        // Nombre
+        gbc.gridx = 0; gbc.gridy = 0;
+        formPanel.add(new JLabel("Nombre:"), gbc);
+        gbc.gridx = 1;
+        formPanel.add(txtNombreE, gbc);
 
-        // Botones
-        JPanel buttonPanel = new JPanel(new FlowLayout());
+        // Dirección
+        gbc.gridx = 2;
+        formPanel.add(new JLabel("Dirección:"), gbc);
+        gbc.gridx = 3;
+        formPanel.add(txtDirE, gbc);
+
+        // Teléfono
+        gbc.gridx = 4;
+        formPanel.add(new JLabel("Teléfono:"), gbc);
+        gbc.gridx = 5;
+        formPanel.add(txtTelE, gbc);
+
+        // ========== FILA 2 ==========
+        // Fecha Nacimiento
+        gbc.gridx = 0; gbc.gridy = 1;
+        formPanel.add(new JLabel("Fecha Nac.:"), gbc);
+        gbc.gridx = 1;
+        formPanel.add(txtNacE, gbc);
+
+        // Código
+        gbc.gridx = 2;
+        formPanel.add(new JLabel("Código:"), gbc);
+        gbc.gridx = 3;
+        formPanel.add(txtCodigo, gbc);
+
+        // Grado
+        gbc.gridx = 4;
+        formPanel.add(new JLabel("Grado:"), gbc);
+        gbc.gridx = 5;
+        formPanel.add(txtGrado, gbc);
+
+        // ========== FILA 3 ==========
+        // Acudiente (ocupa más espacio)
+        gbc.gridx = 0; gbc.gridy = 2;
+        formPanel.add(new JLabel("Acudiente:"), gbc);
+        gbc.gridx = 1;
+        gbc.gridwidth = 5;  // Ocupa desde columna 1 hasta 5
+        formPanel.add(txtAcudiente, gbc);
+        gbc.gridwidth = 1;  // Restaurar
+
+        // ========== FILA 4: Botones ==========
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+
         JButton btnAgregar = new JButton("Agregar Estudiante");
         JButton btnEliminar = new JButton("Eliminar Estudiante");
-        
+
+        btnAgregar.setBackground(new Color(52, 152, 219));
+        btnAgregar.setForeground(Color.BLACK);
+        btnAgregar.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        btnAgregar.setPreferredSize(new Dimension(180, 35));
+
+        btnEliminar.setBackground(new Color(241, 196, 15));
+        btnEliminar.setForeground(Color.BLACK);
+        btnEliminar.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        btnEliminar.setPreferredSize(new Dimension(180, 35));
+
         btnAgregar.addActionListener(e -> agregarEstudiante());
         btnEliminar.addActionListener(e -> eliminarEstudiante());
-        
+
         buttonPanel.add(btnAgregar);
         buttonPanel.add(btnEliminar);
 
         gbc.gridx = 0;
-        gbc.gridy = row;
-        gbc.gridwidth = 2;
+        gbc.gridy = 3;
+        gbc.gridwidth = 6;
         formPanel.add(buttonPanel, gbc);
 
         // Tabla de estudiantes
